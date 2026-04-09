@@ -17,10 +17,12 @@ CREATE TABLE users (
 CREATE TABLE kantongs (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_user INT,
+    is_aktif boolean Not NULL Default 1,
     nama VARCHAR(50) NOT NULL,
     balance DECIMAL(15, 0) DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE CASCADE
+    
 );
 
 -- 3. Tabel Kategoris (Isi: 1=Pemasukan, 2=Pengeluaran)
